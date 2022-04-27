@@ -1,19 +1,99 @@
 const generateFinal = printTeam => {
 
 
-  const generateManager = manager => {}
+  const generateManager = manager => {
+    return ` <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">${manager.getRole()} ${manager.getName()}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
+      <ul>
+      <li>ID: ${manager.getId()}</li>
+      <li> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
+      <li>Office number: ${manager.getOfficeNumber()}</li>
 
-  const generateEngineer = engineer => {}
+      
+      </ul>
+    </div>
+   </div>
+    
+    `;
+  };
 
-  const generateEmployee = employee => {}
+  const generateEngineer = engineer => {
+    return `<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">${engineer.getRole()} ${engineer.getName()}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
+      <ul>
+      <li>ID: ${engineer.getId()}</li>
+      <li> Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
+      <li>Office number: ${engineer.getgithub()}</li>
 
-  const generateIntern = intern => {}
+      
+      </ul>
+    </div>
+   </div>`;
+  };
 
+  
 
+  const generateIntern = intern => {
+
+    return `<div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/office.jpg">
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">${intern.getRole()} ${intern.getName()}<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">This is a link</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
+      <ul>
+      <li>ID: ${intern.getId()}</li>
+      <li> Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+      <li>Office number: ${intern.getSchool()}</li>
+
+      
+      </ul>
+    </div>
+   </div>`;
+  };
+
+  const cards = [];
+
+    cards.push(printTeam
+        .filter(employee => employee.getRole() === "Manager")
+        .map(manager => generateManager(manager))
+    );
+    cards.push(printTeam
+        .filter(employee => employee.getRole() === "Engineer")
+        .map(engineer => generateEngineer(engineer))
+        .join("")
+    );
+    cards.push(printTeam
+        .filter(employee => employee.getRole() === "Intern")
+        .map(intern => generateIntern(intern))
+        .join("")
+    );
+
+    return cards.join("");
 
     
 
-}
+};
 
 module.exports = printTeam => {
 
@@ -58,6 +138,8 @@ module.exports = printTeam => {
         <br /><br />
       </div>
     </div>
+
+    ${generateFinal(printTeam)}
 
     <div class="container">
       <div class="section">
@@ -126,7 +208,6 @@ module.exports = printTeam => {
   </body>
 </html>
 
- 
  
  `   
 }

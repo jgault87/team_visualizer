@@ -39,7 +39,7 @@ const addEmployee = () => {
           break;
 
         default:
-          generateFinal();
+          generateHTML();
       }
     });
 };
@@ -144,6 +144,10 @@ const internPrompt = () => {
 
 }
 
+
+function generateHTML() {
+  fs.writeFileSync('./dist/renderedteam.html', generateFinal(teamArr), "UTF-8")
+}
 
 function init() {
     addEmployee();
