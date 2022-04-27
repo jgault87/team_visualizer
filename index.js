@@ -151,3 +151,9 @@ function init() {
 
 
 init();
+
+
+const generateFinal = () => {
+    console.log('Organization generated')
+    // fs.writeFile('./dist')
+}
