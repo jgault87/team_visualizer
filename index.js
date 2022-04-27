@@ -147,13 +147,12 @@ const internPrompt = () => {
 
 function init() {
     addEmployee();
+    then((data) => fs.writeFileSync('./dist/renderedteam.html', generateFinal(teamArr)))
+.then(() => console.log('Successfully generated team'))
+.catch((err) => console.error(err));
 }
 
 
 init();
 
 
-const generateFinal = () => {
-    console.log('Organization generated')
-    // fs.writeFile('./dist')
-}
