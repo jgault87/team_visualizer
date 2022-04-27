@@ -13,7 +13,7 @@ const generateFinal = printTeam => {
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
       <ul>
-      <li>ID: ${manager.getId()}</li>
+      <li> ID: ${manager.getId()} </li>
       <li> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
       <li>Office number: ${manager.getOfficeNumber()}</li>
 
