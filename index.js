@@ -109,7 +109,7 @@ const engineerPrompt = () => {
 .then(answers => {
     const engineer = new Engineer (answers.engName, answers.engId, answers.engEmail, answers.engGithub);
     teamArr.push(engineer);
-    employeePrompt();
+    addEmployee();
 });
 }
 
