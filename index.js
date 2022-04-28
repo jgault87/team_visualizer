@@ -11,7 +11,7 @@ const generateFinal = require("./src/generateHTML.js");
 // empty array to be populated by userinput
 const teamArr = [];
 
-
+// first prompt/function that we will call back to until we are done added team members
 const addEmployee = () => {
   inquirer.prompt([
       {
@@ -26,6 +26,7 @@ const addEmployee = () => {
         ],
       },
     ])
+    //switch case for userselection, if user chooses not to add further it will handoff to generateHTML function
     .then(function (data) {
       switch (data.role) {
         case "Manager":
