@@ -2,22 +2,19 @@ const generateFinal = printTeam => {
 
 
   const generateManager = manager => {
-    return ` <div class="card">
+    return ` <div class="card small">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+      <img class="activator" src="./images/office.jpg">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">${manager.getRole()} ${manager.getName()}<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons">folder_shared</i>${manager.getRole()} : ${manager.getName()}  <i class="material-icons right">more_vert</i></span>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-darken-4">${manager.getName()}<i class="material-icons right">close</i></span>
       <ul>
-      <li> ID: ${manager.getId()} </li>
+      <li> Employee ID: ${manager.getID()} </li>
       <li> Email: <a href="mailto:${manager.getEmail()}">${manager.getEmail()}</a></li>
-      <li>Office number: ${manager.getOfficeNumber()}</li>
-
-      
+      <li>Office number: ${manager.getOffice()}</li>
       </ul>
     </div>
    </div>
@@ -26,20 +23,19 @@ const generateFinal = printTeam => {
   };
 
   const generateEngineer = engineer => {
-    return `<div class="card">
+    return `<div class="card small">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+      <img class="activator" src="./images/coding.jpg">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">${engineer.getRole()} ${engineer.getName()}<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons">developer_mode</i>${engineer.getRole()} : ${engineer.getName()} <i class="material-icons right">more_vert</i></span>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-darken-4">${engineer.getName()}<i class="material-icons right">close</i></span>
       <ul>
-      <li>ID: ${engineer.getId()}</li>
+      <li>Employee ID: ${engineer.getID()}</li>
       <li> Email: <a href="mailto:${engineer.getEmail()}">${engineer.getEmail()}</a></li>
-      <li>Office number: ${engineer.getgithub()}</li>
+      <li> <a href="https://github.com/${engineer.getGithub()}">Github</a></li>
 
       
       </ul>
@@ -51,22 +47,19 @@ const generateFinal = printTeam => {
 
   const generateIntern = intern => {
 
-    return `<div class="card">
+    return `<div class="card small">
     <div class="card-image waves-effect waves-block waves-light">
-      <img class="activator" src="images/office.jpg">
+      <img class="activator" src="./images/study.jpg">
     </div>
     <div class="card-content">
-      <span class="card-title activator grey-text text-darken-4">${intern.getRole()} ${intern.getName()}<i class="material-icons right">more_vert</i></span>
-      <p><a href="#">This is a link</a></p>
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons">book</i>${intern.getRole()} : ${intern.getName()}<i class="material-icons right">more_vert</i></span>
     </div>
     <div class="card-reveal">
-      <span class="card-title grey-text text-darken-4">Manager<i class="material-icons right">close</i></span>
+      <span class="card-title grey-text text-darken-4">${intern.getName()}<i class="material-icons right">close</i></span>
       <ul>
-      <li>ID: ${intern.getId()}</li>
-      <li> Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
-      <li>Office number: ${intern.getSchool()}</li>
-
-      
+      <li>Employee ID: ${intern.getID()}</li>
+      <li>Email: <a href="mailto:${intern.getEmail()}">${intern.getEmail()}</a></li>
+      <li>School: ${intern.getSchool()}</li>
       </ul>
     </div>
    </div>`;
@@ -132,14 +125,13 @@ module.exports = printTeam => {
     <div class="section no-pad-bot" id="index-banner">
       <div class="container">
         <br /><br />
-        <h1 class="header center orange-text">Team Profile Gen</h1>
-        <div class="row center"></div>
-        <div class="row center"></div>
+        <h1 class="header center orange-text">Team Profile Generator</h1>
+        <div class="row center">${generateFinal(printTeam)}</div>
         <br /><br />
       </div>
     </div>
 
-    ${generateFinal(printTeam)}
+    
 
     <div class="container">
       <div class="section">
@@ -148,7 +140,7 @@ module.exports = printTeam => {
           <div class="col s12 m4">
             <div class="icon-block">
               <h2 class="center light-blue-text">
-                <i class="material-icons">flash_on</i>
+                
               </h2>
               <h5 class="center"></h5>
 
@@ -159,7 +151,7 @@ module.exports = printTeam => {
           <div class="col s12 m4">
             <div class="icon-block">
               <h2 class="center light-blue-text">
-                <i class="material-icons">group</i>
+               
               </h2>
               <h5 class="center"></h5>
 
@@ -170,7 +162,7 @@ module.exports = printTeam => {
           <div class="col s12 m4">
             <div class="icon-block">
               <h2 class="center light-blue-text">
-                <i class="material-icons">settings</i>
+               
               </h2>
               <h5 class="center"></h5>
 
@@ -198,13 +190,14 @@ module.exports = printTeam => {
         <div class="container">
           Made by
           <a
-            class="white-text text-lighten-3"
+            class="text-lighten-3"
             href="https://github.com/jgault87"
             >JJ Gault</a
           >
         </div>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   </body>
 </html>
 

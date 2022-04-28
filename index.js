@@ -74,6 +74,7 @@ const managerPrompt = () => {
   
     ])
     .then(answers => {
+        console.log(answers)
       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.managerOffice);
       teamArr.push(manager);
       addEmployee();
@@ -107,6 +108,7 @@ const engineerPrompt = () => {
   }
 ])
 .then(answers => {
+    console.log(answers)
     const engineer = new Engineer (answers.engName, answers.engId, answers.engEmail, answers.engGithub);
     teamArr.push(engineer);
     addEmployee();
@@ -137,6 +139,7 @@ const internPrompt = () => {
   }
 ])
 .then(answers => {
+    console.log(answers)
     const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.internSchool);
     teamArr.push(intern);
     addEmployee();
