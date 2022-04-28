@@ -2,5 +2,26 @@
   "dependencies": {
     "inquirer": "^8.2.2",
     "jest": "^28.0.2"
-  }
+  },
+  "name": "team_visualizer",
+  "description": "[![license](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgault87/team_visualizer.git"
+  },
+  "author": "jgault87",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jgault87/team_visualizer/issues"
+  },
+  "homepage": "https://github.com/jgault87/team_visualizer#readme"
 }

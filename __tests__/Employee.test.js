@@ -1,28 +1,52 @@
 const Employee = require('../lib/Employee');
 
-describe('Initialization', () => {
-  it("Should create object with name, id and email if provided", () => {
-    const employee = new Employee('JJ', '8055', 'jgault87@gmail.com');
+// describe 
+describe('Testing Employee', () => { 
+    describe('Can instantiate a new employee', () => {
+        it('should be able to create a new employee', () => {
+            const employee = new Employee();
+            expect(typeof(employee)).toBe('object')
+        })
+    })
 
-   
-    expect(employee.name).toEqual("JJ");
-    expect(employee.id).toEqual("8055");
-    expect(employee.email).toEqual("jgault87@gmail.com");
-  })
+    describe('Can set properties via constructor', () => {
+        it('should be able to set a name via constructor', () => {
+            const name = 'JJ';
+            const employee = new Employee(name)
+            expect(employee.name).toBe(name)
+        })
+        it('should be able to set an id via constructor', () => {
+            const id = 1;
+            const employee = new Employee('JJ', id)
+            expect(employee.id).toBe(id)
+        })
+        it('should be able to set an email via constructor', () => {
+            const email = 'jj@test.com';
+            const employee = new Employee('JJ', 1, email)
+            expect(employee.email).toBe(email)
+        })
+    })
 
-  it("Functions should return inherited methods", () => {
-    const employee = new Employee('JJ', '8055', 'jgault87@gmail.com');
-
-    // Verify that class functions return constructor inputs when called
-    expect(employee.getName()).toEqual(employee.name);
-    expect(employee.getId()).toEqual(employee.id);
-    expect(employee.getEmail()).toEqual(employee.email);
-  })
-
-  it("getRole should return 'Employee'", () => {
-    const employee = new Employee('JJ', '8055', 'jgault87@gmail.com');
-
-    // Verify that getRole function returns 'Employee'
-    expect(employee.getRole()).toEqual('Employee');
-  })
-});
+    describe('Can use Employees methods', () => {
+        it('should be able to get name property via getName()', () => {
+            const name = 'JJ';
+            const employee = new Employee(name)
+            expect(employee.getName()).toBe(name)
+        })
+        it('should be able to get id property via getID()', () => {
+            const id = 1;
+            const employee = new Employee('JJ', id)
+            expect(employee.getID()).toBe(id)
+        })
+        it('should be able to get an email via getEmail()', () => {
+            const email = 'jj@test.com';
+            const employee = new Employee('JJ', 1, email)
+            expect(employee.getEmail()).toBe(email)
+        })
+        it("should always return 'Employee' via getRole()", () => {
+            const role = 'Employee';
+            const employee = new Employee('JJ', 1, 'jj@test.com')
+            expect(employee.getRole()).toBe(role)
+        })
+    })
+})
