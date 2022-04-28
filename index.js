@@ -151,6 +151,7 @@ const internPrompt = () => {
 
 function generateHTML() {
   fs.writeFileSync('./dist/renderedteam.html', generateFinal(teamArr), "UTF-8")
+  console.log('Successfully generated team HTML in dist folder')
 }
 
 function init() {
