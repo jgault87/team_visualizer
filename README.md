@@ -13,6 +13,8 @@
 
   ## Description 
   This is a handy node application which makes use of inquirer prompts to capture user input and dynamically generate an HTML page with profile informationof the following individual team member roles: Manager, Engineer and Intern. It use javascript classes to pass along properties which will then parse the information to an HTML which makes use of Materialize CSS framework so that all of the styling and script is included in the HTML file.
+
+  ![](demo.gif)
   
 
   ## Table of Contents
